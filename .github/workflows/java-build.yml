@@ -17,11 +17,11 @@ jobs:
 
       # install a specific version of Java
       # this can be customized to install any version of distro
-      - name: Set up Temurin Java 17
+      - name: Set up Temurin Java ${{ env.JAVA_VERSION }}
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: ${{ env.JAVA_VERSION }}
 
       # after java has be installed, we can compile the java code
       - name: Compile HelloWorld.java
